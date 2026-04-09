@@ -1,42 +1,36 @@
+
 package ED;
 
 
-public class Nodo {
-
-    private int dato;
-    private Nodo ps;
-
-    public Nodo(int elem) {
-        dato = elem;
-        ps = null;
+public class Nodo<T> {
+       private T dato;
+    private Nodo<T> ps;
+    
+     public Nodo() {
+        this.ps = null;
     }
+     
+    public Nodo(T e){
+        dato=e;
+        ps=null;
+                       }
 
-    /**
-     * @return el dato
-     */
-    public int getDato() {
+    public T getDato() {
         return dato;
     }
 
-    /**
-     * @param dato el dato a establecer
-     */
-    public void setDato(int dato) {
+    private void setDato(T dato) {
         this.dato = dato;
     }
 
-    /**
-     * @return el ps
-     */
-    public Nodo getPs() {
+    public Nodo<T> getPs() {
         return ps;
     }
 
-    /**
-     * @param ps el ps a establecer
-     */
-    public void setPs(Nodo ps) {
+    private void setPs(Nodo<T> ps) {
         this.ps = ps;
     }
-
+    public void enlazar(Nodo<T> ref){
+        setPs(ref);
+    }
 }
