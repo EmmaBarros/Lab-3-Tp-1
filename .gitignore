@@ -1,0 +1,13 @@
+# Archivos de configuración de NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/build/
+nbactions.xml
+nb-configuration.xml
+
+# Archivos de compilación de Java
+*.class
+*.jar
+*.war
+/EJ3-Calculadora Racional/build/

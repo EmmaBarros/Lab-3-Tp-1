@@ -1,10 +1,5 @@
 
 package Menu;
-<<<<<<< HEAD
-import ED.Nodo;
-import ED.ListaEncadenada;
-=======
->>>>>>> rama1
 import Consola.Consola;
 /**
  *
@@ -12,53 +7,6 @@ import Consola.Consola;
  */
 public class Menu {
     private String Titulo;
-<<<<<<< HEAD
-    private ListaEncadenada <String> items;
-
-    public Menu(String Titulo) {
-        this.Titulo = Titulo;
-        this.items = new ListaEncadenada<>();
-    }
-    
-    public void agregarItem(String opcion){
-        items.insertarPri(opcion);
-    }
-    public void removerItem(String opcion){
-        items.eliminar(opcion);
-    }    
-    public void actualizarItem(String viejo,String nuevo){
-        Nodo<String> p = items.inicio();
-        while(p!=null){
-            if(p.getDato().equals(viejo)){
-                items.eliminar(viejo);
-                items.insertarPri(nuevo);
-            }
-            p = p.getPs();
-        }
-    }
-    private int obtenerRango(){
-        int cont = 0;
-        Nodo<String> p = items.inicio();
-        while(p!=null){
-            cont ++;
-            p = p.getPs();
-        }
-       return cont;
-    }
-    public void MostrarMenu(){
-        Consola.emitirMensajeLN("\n--"+ Titulo +"--");
-       Nodo<String> p = items.inicio();
-       int i = 1;
-       if(items.listaVacia()){
-        Consola.emitirMensajeLN("El menu esta vacio");
-    }else{
-           while(p!=null){
-               Consola.emitirMensajeLN(i+"."+p.getDato());
-               p = p.getPs();
-               i ++;
-           }
-       }
-=======
     private  String[] items;
     private int cv;
     private final int MAX = 10;
@@ -108,24 +56,10 @@ public class Menu {
                    Consola.emitirMensajeLN((i+1)+"."+items[i]);
                }
            }
->>>>>>> rama1
      Consola.emitirMensajeLN("presione (0) para salir o volver...");
      Consola.emitirMensajeLN("Seleccione una opcion");
     }
     public int ejecutar(){
-<<<<<<< HEAD
-        int op ;
-        int max = obtenerRango();
-        do{
-           MostrarMenu();
-           op = Consola.leerInt();
-           if(op < 0 || op > max){
-               Consola.emitirMensajeLN("opcion incorrecta (rango invalido)");
-               op = -1;
-           }
-        }while(op == -1);
-        return op;
-=======
     int op ;
     do{
         mostrarMenu();
@@ -136,7 +70,6 @@ public class Menu {
         }
     }while(op==-1);
     return op;
->>>>>>> rama1
     }
     
 }

@@ -13,17 +13,10 @@ public class GestorMenu {
         this.menuUser = new Menu("Menu de Usuario");
         this.admin = new Menu("Administrador de Opciones");
 
-<<<<<<< HEAD
        admin.agregarItem("Prueba de Menu");
        admin.agregarItem("Eliminar Opcion");
        admin.agregarItem("Editar Opcion");
        admin.agregarItem("Agregar Opcion");
-=======
-       admin.agregarItem("Agregar Opcion");
-       admin.agregarItem("Editar Opcion");
-       admin.agregarItem("Eliminar Opcion");
-       admin.agregarItem("Prueba de menu");
->>>>>>> rama1
     }
    public void iniciar(){
        int op;
