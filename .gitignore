@@ -10,3 +10,4 @@ nb-configuration.xml
 *.class
 *.jar
 *.war
+/EJ3-Calculadora Racional/build/
