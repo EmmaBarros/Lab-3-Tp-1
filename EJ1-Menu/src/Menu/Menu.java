@@ -1,7 +1,5 @@
 
 package Menu;
-import ED.Nodo;
-import ED.ListaEncadenada;
 import Consola.Consola;
 /**
  *
@@ -9,66 +7,69 @@ import Consola.Consola;
  */
 public class Menu {
     private String Titulo;
-    private ListaEncadenada <String> items;
+    private  String[] items;
+    private int cv;
+    private final int MAX = 10;
 
     public Menu(String Titulo) {
         this.Titulo = Titulo;
-        this.items = new ListaEncadenada<>();
+        this.items = new String[MAX];
+        this.cv = 0;
     }
     
     public void agregarItem(String opcion){
-        items.insertarPri(opcion);
+        if (cv < MAX) {
+            items[cv] = opcion;
+            cv ++;
+        }else{
+            Consola.emitirMensajeLN("no hay espacio suficiente para agregar");
+        }
     }
     public void removerItem(String opcion){
-        items.eliminar(opcion);
+        for (int i = 0; i < cv; i++) {
+            if(items[i].equals(opcion)){
+                for (int j = 0; j < cv; j++) {
+                    items[j]=items[j+1];
+                }
+                items[cv-1]= null;
+                cv --;
+                Consola.emitirMensajeLN("elemento eliminado");
+                return;
+            }
+        }
+        Consola.emitirMensajeLN("no se encontro el elemento buscado");
     }    
     public void actualizarItem(String viejo,String nuevo){
-        Nodo<String> p = items.inicio();
-        while(p!=null){
-            if(p.getDato().equals(viejo)){
-                items.eliminar(viejo);
-                items.insertarPri(nuevo);
+         for (int i = 0; i < cv; i++) {
+            if(items[i].equals(viejo)){
+                items[i]=nuevo;
             }
-            p = p.getPs();
         }
     }
-    private int obtenerRango(){
-        int cont = 0;
-        Nodo<String> p = items.inicio();
-        while(p!=null){
-            cont ++;
-            p = p.getPs();
-        }
-       return cont;
-    }
-    public void MostrarMenu(){
+ 
+    public void mostrarMenu(){
         Consola.emitirMensajeLN("\n--"+ Titulo +"--");
-       Nodo<String> p = items.inicio();
-       int i = 1;
-       if(items.listaVacia()){
-        Consola.emitirMensajeLN("El menu esta vacio");
-    }else{
-           while(p!=null){
-               Consola.emitirMensajeLN(i+"."+p.getDato());
-               p = p.getPs();
-               i ++;
+           if(cv == 0){
+               Consola.emitirMensajeLN("el menu esta vacio o no a sido cargado");
+           }else{
+               for (int i = 0; i < cv; i++) {
+                   Consola.emitirMensajeLN((i+1)+"."+items[i]);
+               }
            }
-       }
      Consola.emitirMensajeLN("presione (0) para salir o volver...");
      Consola.emitirMensajeLN("Seleccione una opcion");
     }
     public int ejecutar(){
-        int op ;
-        int max = obtenerRango();
-        do{
-           MostrarMenu();
-           op = Consola.leerInt();
-           if(op < 0 || op > max){
-               Consola.emitirMensajeLN("opcion incorrecta (rango invalido)");
-               op = -1;
-           }
-        }while(op == -1);
-        return op;
+    int op ;
+    do{
+        mostrarMenu();
+        op = Consola.leerInt();
+        if (op < 0 || op > cv) {
+            Consola.emitirMensajeLN("opcion invalida o fuera de rango de posibilidades...");
+            op = -1;
+        }
+    }while(op==-1);
+    return op;
     }
     
 }
