@@ -11,3 +11,4 @@ nb-configuration.xml
 *.jar
 *.war
 /EJ3-Calculadora Racional/build/
+/Principal/nbproject/private/
