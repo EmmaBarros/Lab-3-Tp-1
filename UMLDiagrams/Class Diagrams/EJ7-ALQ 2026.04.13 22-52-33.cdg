@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EJ7-ALQ">
+  <ClassDiagramComponents>
+    <Class name="Consola" package="Consola" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="leerString" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="leerInt" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="leerInteger" returnType="Integer" visibility="public" isStatic="true"/>
+        <Method name="mostrarInteger" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+          <Argument type="Integer" name="valor"/>
+        </Method>
+        <Method name="leerFloat" returnType="float" visibility="public" isStatic="true"/>
+        <Method name="leerDouble" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="emitirMensajeLN" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="emitirMensaje" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="leerDatoString" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="mostrarMensaje" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="leerChar" returnType="char" visibility="public" isStatic="true"/>
+        <Method name="ajustarString" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="cad"/>
+          <Argument type="int" name="longitud"/>
+        </Method>
+        <Method name="confirmar" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="leerDato" returnType="String" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="GestionAlquiler" package="Controllers" visibility="public" xPosition="1407.0" yPosition="322.0">
+      <Fields>
+        <Field name="gAutos" type="GestionAutos" visibility="private"/>
+        <Field name="gClientes" type="GestionClientes" visibility="private"/>
+        <Field name="menu" type="Menu" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="alquiler" returnType="void" visibility="private"/>
+        <Method name="devolucion" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="GestionAutos" package="Controllers" visibility="public" xPosition="657.0" yPosition="171.0">
+      <Fields>
+        <Field name="listAut" type="ListaEncadenada&lt;Auto&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="agregarVehiculo" returnType="void" visibility="public"/>
+        <Method name="mostrarDisponibles" returnType="void" visibility="public"/>
+        <Method name="buscarPorId" returnType="Auto" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionClientes" package="Controllers" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="listaClientes" type="ListaEncadenada&lt;Cliente&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="registrarClientes" returnType="void" visibility="public"/>
+        <Method name="mostrarClientes" returnType="void" visibility="public"/>
+        <Method name="buscarClPorId" returnType="Cliente" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ListaEncadenada" package="ED" visibility="public" xPosition="1187.0" yPosition="58.0">
+      <Fields>
+        <Field name="list" type="Nodo&lt;T&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicio" returnType="Nodo&lt;T&gt;" visibility="public"/>
+        <Method name="listaVacia" returnType="boolean" visibility="public"/>
+        <Method name="insertarPri" returnType="void" visibility="public">
+          <Argument type="T" name="elem"/>
+        </Method>
+        <Method name="eliminar" returnType="Nodo&lt;T&gt;" visibility="public">
+          <Argument type="T" name="elem"/>
+        </Method>
+        <Method name="quitar" returnType="Nodo&lt;T&gt;" visibility="public">
+          <Argument type="Nodo&lt;T&gt;" name="p"/>
+          <Argument type="Nodo&lt;T&gt;" name="ant"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Nodo" package="ED" visibility="public" xPosition="1479.0" yPosition="20.0">
+      <Fields>
+        <Field name="dato" type="T" visibility="private"/>
+        <Field name="ps" type="Nodo&lt;T&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="T" name="e"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDato" returnType="T" visibility="public"/>
+        <Method name="setDato" returnType="void" visibility="private">
+          <Argument type="T" name="dato"/>
+        </Method>
+        <Method name="getPs" returnType="Nodo&lt;T&gt;" visibility="public"/>
+        <Method name="setPs" returnType="void" visibility="private">
+          <Argument type="Nodo&lt;T&gt;" name="ps"/>
+        </Method>
+        <Method name="enlazar" returnType="void" visibility="public">
+          <Argument type="Nodo&lt;T&gt;" name="ref"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="Menu" visibility="public" xPosition="1781.0" yPosition="49.0">
+      <Fields>
+        <Field name="Titulo" type="String" visibility="private"/>
+        <Field name="items" type="String[]" visibility="private"/>
+        <Field name="cv" type="int" visibility="private"/>
+        <Field name="MAX" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Titulo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregarItem" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="removerItem" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="actualizarItem" returnType="void" visibility="public">
+          <Argument type="String" name="viejo"/>
+          <Argument type="String" name="nuevo"/>
+        </Method>
+        <Method name="mostrarMenu" returnType="void" visibility="public"/>
+        <Method name="ejecutar" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Auto" package="Models" visibility="public" xPosition="1765.0" yPosition="564.0">
+      <Fields>
+        <Field name="contadorId" type="int" visibility="private" isStatic="true"/>
+        <Field name="idAuto" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idAuto"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="int" name="estado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public"/>
+        <Method name="getContadorId" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="setContadorId" returnType="void" visibility="private" isStatic="true">
+          <Argument type="int" name="contadorId"/>
+        </Method>
+        <Method name="getIdAuto" returnType="int" visibility="public"/>
+        <Method name="setIdAuto" returnType="void" visibility="private">
+          <Argument type="int" name="idAuto"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="Models" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="contadorId" type="int" visibility="private" isStatic="true"/>
+        <Field name="idCliente" type="int" visibility="private"/>
+        <Field name="autosAlquilados" type="ListaEncadenada" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idCliente"/>
+          <Argument type="ListaEncadenada" name="autosAlquilados"/>
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="ape"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="CargarDatos" returnType="void" visibility="public"/>
+        <Method name="getContadorId" returnType="int" visibility="public"/>
+        <Method name="setContadorId" returnType="void" visibility="private">
+          <Argument type="int" name="contadorId"/>
+        </Method>
+        <Method name="getIdCliente" returnType="int" visibility="public"/>
+        <Method name="setIdCliente" returnType="void" visibility="private">
+          <Argument type="int" name="idCliente"/>
+        </Method>
+        <Method name="getAutosAlquilados" returnType="ListaEncadenada" visibility="public"/>
+        <Method name="setAutosAlquilados" returnType="void" visibility="private">
+          <Argument type="ListaEncadenada" name="autosAlquilados"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Models" visibility="public" xPosition="388.0" yPosition="777.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="ape" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="ape"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="CargarDatos" returnType="void" visibility="public"/>
+        <Method name="ingresarNombre" returnType="void" visibility="private"/>
+        <Method name="ingresarApellido" returnType="void" visibility="private"/>
+        <Method name="ingresarDni" returnType="void" visibility="private"/>
+        <Method name="validarString" returnType="boolean" visibility="private">
+          <Argument type="String" name="n"/>
+        </Method>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="setNom" returnType="void" visibility="private">
+          <Argument type="String" name="nom"/>
+        </Method>
+        <Method name="getApe" returnType="String" visibility="public"/>
+        <Method name="setApe" returnType="void" visibility="private">
+          <Argument type="String" name="ape"/>
+        </Method>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="private">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="Models" visibility="public" xPosition="872.0" yPosition="538.0">
+      <Fields>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="anio" type="int" visibility="private"/>
+        <Field name="estado" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="int" name="estado"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public"/>
+        <Method name="ingresarModelo" returnType="void" visibility="private"/>
+        <Method name="ingresarMarca" returnType="void" visibility="private"/>
+        <Method name="ingresarAnio" returnType="void" visibility="private"/>
+        <Method name="ingresarEstado" returnType="void" visibility="private"/>
+        <Method name="actualizarEstado" returnType="void" visibility="public">
+          <Argument type="int" name="nuevoEstado"/>
+        </Method>
+        <Method name="validarString" returnType="boolean" visibility="private">
+          <Argument type="String" name="n"/>
+        </Method>
+        <Method name="validarAnio" returnType="boolean" visibility="private">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="validarEstado" returnType="boolean" visibility="private">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="private">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="private">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getAnio" returnType="int" visibility="public"/>
+        <Method name="setAnio" returnType="void" visibility="private">
+          <Argument type="int" name="anio"/>
+        </Method>
+        <Method name="getEstado" returnType="int" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="private">
+          <Argument type="int" name="estado"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="Principal" visibility="public" xPosition="1148.0" yPosition="436.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Models.Cliente" target="ED.ListaEncadenada" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listAut" source="Controllers.GestionAutos" target="Models.Auto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaEncadenada&lt;Auto&gt;"/>
+    <UseRelation source="ED.ListaEncadenada" target="ED.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gClientes" source="Controllers.GestionAlquiler" target="Controllers.GestionClientes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Models.Auto" target="Models.Vehiculo"/>
+    <IsRelation name="is" source="Models.Cliente" target="Models.Persona"/>
+    <HasRelation name="listaClientes" source="Controllers.GestionClientes" target="Models.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaEncadenada&lt;Cliente&gt;"/>
+    <UseRelation source="Controllers.GestionClientes" target="Models.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="Controllers.GestionAlquiler" target="Menu.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="autosAlquilados" source="Models.Cliente" target="ED.ListaEncadenada" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaEncadenada"/>
+    <UseRelation source="ED.Nodo" target="ED.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gAutos" source="Controllers.GestionAlquiler" target="Controllers.GestionAutos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.GestionAutos" target="Models.Auto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

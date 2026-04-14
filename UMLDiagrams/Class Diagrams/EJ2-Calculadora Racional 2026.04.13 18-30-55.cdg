@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EJ2-Calculadora Racional">
+  <ClassDiagramComponents>
+    <Class name="Consola" package="Consola" visibility="public" xPosition="54.0" yPosition="122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="leerString" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="leerInt" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="leerInteger" returnType="Integer" visibility="public" isStatic="true"/>
+        <Method name="mostrarInteger" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+          <Argument type="Integer" name="valor"/>
+        </Method>
+        <Method name="leerFloat" returnType="float" visibility="public" isStatic="true"/>
+        <Method name="leerDouble" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="emitirMensajeLN" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="emitirMensaje" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="leerDatoString" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="mostrarMensaje" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="leerChar" returnType="char" visibility="public" isStatic="true"/>
+        <Method name="ajustarString" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="cad"/>
+          <Argument type="int" name="longitud"/>
+        </Method>
+        <Method name="confirmar" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="leerDato" returnType="String" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="GestorMenu" package="Menu" visibility="public" xPosition="435.0" yPosition="285.0">
+      <Fields>
+        <Field name="menuUser" type="Menu" visibility="private"/>
+        <Field name="admin" type="Menu" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="procesar" returnType="void" visibility="public">
+          <Argument type="int" name="op"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="Menu" visibility="public" xPosition="746.0" yPosition="238.0">
+      <Fields>
+        <Field name="Titulo" type="String" visibility="private"/>
+        <Field name="items" type="String[]" visibility="private"/>
+        <Field name="cv" type="int" visibility="private"/>
+        <Field name="MAX" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Titulo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregarItem" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="removerItem" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="actualizarItem" returnType="void" visibility="public">
+          <Argument type="String" name="viejo"/>
+          <Argument type="String" name="nuevo"/>
+        </Method>
+        <Method name="mostrarMenu" returnType="void" visibility="public"/>
+        <Method name="ejecutar" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GestorCalculadora" package="Models" visibility="public" xPosition="746.0" yPosition="51.0">
+      <Fields>
+        <Field name="menu" type="Menu" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Racional" package="Models" visibility="public" xPosition="1087.0" yPosition="95.0">
+      <Fields>
+        <Field name="num" type="int" visibility="private"/>
+        <Field name="den" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="num"/>
+          <Argument type="int" name="den"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cargarRacional" returnType="void" visibility="public"/>
+        <Method name="ingresarNumerador" returnType="void" visibility="private"/>
+        <Method name="ingresarDenominador" returnType="void" visibility="private"/>
+        <Method name="validarDenominador" returnType="boolean" visibility="private">
+          <Argument type="int" name="den"/>
+        </Method>
+        <Method name="multiplicar" returnType="Racional" visibility="public" isStatic="true">
+          <Argument type="Racional" name="r1"/>
+          <Argument type="Racional" name="r2"/>
+        </Method>
+        <Method name="dividir" returnType="Racional" visibility="public" isStatic="true">
+          <Argument type="Racional" name="r1"/>
+          <Argument type="Racional" name="r2"/>
+        </Method>
+        <Method name="getNum" returnType="int" visibility="public"/>
+        <Method name="setNum" returnType="void" visibility="private">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="getDen" returnType="int" visibility="public"/>
+        <Method name="setDen" returnType="void" visibility="private">
+          <Argument type="int" name="den"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="Principal" visibility="public" xPosition="1087.0" yPosition="511.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Models.Racional" target="Models.Racional" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="admin" source="Menu.GestorMenu" target="Menu.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menuUser" source="Menu.GestorMenu" target="Menu.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="Models.GestorCalculadora" target="Menu.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

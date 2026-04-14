@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EJ1-Menu">
+  <ClassDiagramComponents>
+    <Class name="Consola" package="Consola" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="leerString" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="leerInt" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="leerInteger" returnType="Integer" visibility="public" isStatic="true"/>
+        <Method name="mostrarInteger" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+          <Argument type="Integer" name="valor"/>
+        </Method>
+        <Method name="leerFloat" returnType="float" visibility="public" isStatic="true"/>
+        <Method name="leerDouble" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="emitirMensajeLN" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="emitirMensaje" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="leerDatoString" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="mostrarMensaje" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="leerChar" returnType="char" visibility="public" isStatic="true"/>
+        <Method name="ajustarString" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="cad"/>
+          <Argument type="int" name="longitud"/>
+        </Method>
+        <Method name="confirmar" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="leerDato" returnType="String" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ListaEncadenada" package="ED" visibility="public" xPosition="389.0" yPosition="219.0">
+      <Fields>
+        <Field name="list" type="Nodo&lt;T&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicio" returnType="Nodo&lt;T&gt;" visibility="public"/>
+        <Method name="listaVacia" returnType="boolean" visibility="public"/>
+        <Method name="insertarPri" returnType="void" visibility="public">
+          <Argument type="T" name="elem"/>
+        </Method>
+        <Method name="eliminar" returnType="Nodo&lt;T&gt;" visibility="public">
+          <Argument type="T" name="elem"/>
+        </Method>
+        <Method name="quitar" returnType="Nodo&lt;T&gt;" visibility="public">
+          <Argument type="Nodo&lt;T&gt;" name="p"/>
+          <Argument type="Nodo&lt;T&gt;" name="ant"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Nodo" package="ED" visibility="public" xPosition="698.0" yPosition="166.0">
+      <Fields>
+        <Field name="dato" type="T" visibility="private"/>
+        <Field name="ps" type="Nodo&lt;T&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="T" name="e"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDato" returnType="T" visibility="public"/>
+        <Method name="setDato" returnType="void" visibility="private">
+          <Argument type="T" name="dato"/>
+        </Method>
+        <Method name="getPs" returnType="Nodo&lt;T&gt;" visibility="public"/>
+        <Method name="setPs" returnType="void" visibility="private">
+          <Argument type="Nodo&lt;T&gt;" name="ps"/>
+        </Method>
+        <Method name="enlazar" returnType="void" visibility="public">
+          <Argument type="Nodo&lt;T&gt;" name="ref"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestorMenu" package="Menu" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="menuUser" type="Menu" visibility="private"/>
+        <Field name="admin" type="Menu" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="procesar" returnType="void" visibility="public">
+          <Argument type="int" name="op"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="Menu" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="Titulo" type="String" visibility="private"/>
+        <Field name="items" type="String[]" visibility="private"/>
+        <Field name="cv" type="int" visibility="private"/>
+        <Field name="MAX" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Titulo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregarItem" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="removerItem" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="actualizarItem" returnType="void" visibility="public">
+          <Argument type="String" name="viejo"/>
+          <Argument type="String" name="nuevo"/>
+        </Method>
+        <Method name="mostrarMenu" returnType="void" visibility="public"/>
+        <Method name="ejecutar" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="Menu" visibility="public" xPosition="970.0" yPosition="293.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="admin" source="Menu.GestorMenu" target="Menu.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ED.ListaEncadenada" target="ED.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ED.Nodo" target="ED.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menuUser" source="Menu.GestorMenu" target="Menu.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
