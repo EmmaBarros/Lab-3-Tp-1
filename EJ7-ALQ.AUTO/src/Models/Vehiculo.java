@@ -75,6 +75,7 @@ public class Vehiculo {
                 Consola.emitirMensajeLN("Opcion invalida , por favor seleccione una de las opciones");
             }
         }while(!validarEstado(e));
+        setEstado(e);
     }
     
     

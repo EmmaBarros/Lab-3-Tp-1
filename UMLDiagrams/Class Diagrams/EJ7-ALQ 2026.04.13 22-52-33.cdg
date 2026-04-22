@@ -2,7 +2,7 @@
 
 <ClassDiagram name="EJ7-ALQ">
   <ClassDiagramComponents>
-    <Class name="Consola" package="Consola" visibility="public" xPosition="20.0" yPosition="20.0">
+    <Class name="Consola" package="Consola" visibility="public" xPosition="144.0" yPosition="30.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -34,7 +34,7 @@
         <Method name="leerDato" returnType="String" visibility="public" isStatic="true"/>
       </Methods>
     </Class>
-    <Class name="GestionAlquiler" package="Controllers" visibility="public" xPosition="1407.0" yPosition="322.0">
+    <Class name="GestionAlquiler" package="Controllers" visibility="public" xPosition="1452.0" yPosition="436.0">
       <Fields>
         <Field name="gAutos" type="GestionAutos" visibility="private"/>
         <Field name="gClientes" type="GestionClientes" visibility="private"/>
@@ -49,7 +49,7 @@
         <Method name="devolucion" returnType="void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="GestionAutos" package="Controllers" visibility="public" xPosition="657.0" yPosition="171.0">
+    <Class name="GestionAutos" package="Controllers" visibility="public" xPosition="1464.0" yPosition="1005.0">
       <Fields>
         <Field name="listAut" type="ListaEncadenada&lt;Auto&gt;" visibility="private"/>
       </Fields>
@@ -64,7 +64,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="GestionClientes" package="Controllers" visibility="public" xPosition="920.0" yPosition="20.0">
+    <Class name="GestionClientes" package="Controllers" visibility="public" xPosition="547.0" yPosition="77.0">
       <Fields>
         <Field name="listaClientes" type="ListaEncadenada&lt;Cliente&gt;" visibility="private"/>
       </Fields>
@@ -79,7 +79,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="ListaEncadenada" package="ED" visibility="public" xPosition="1187.0" yPosition="58.0">
+    <Class name="ListaEncadenada" package="ED" visibility="public" xPosition="984.0" yPosition="77.0">
       <Fields>
         <Field name="list" type="Nodo&lt;T&gt;" visibility="protected"/>
       </Fields>
@@ -101,7 +101,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Nodo" package="ED" visibility="public" xPosition="1479.0" yPosition="20.0">
+    <Class name="Nodo" package="ED" visibility="public" xPosition="1396.0" yPosition="77.0">
       <Fields>
         <Field name="dato" type="T" visibility="private"/>
         <Field name="ps" type="Nodo&lt;T&gt;" visibility="private"/>
@@ -126,7 +126,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Menu" package="Menu" visibility="public" xPosition="1781.0" yPosition="49.0">
+    <Class name="Menu" package="Menu" visibility="public" xPosition="1723.0" yPosition="201.0">
       <Fields>
         <Field name="Titulo" type="String" visibility="private"/>
         <Field name="items" type="String[]" visibility="private"/>
@@ -184,7 +184,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Cliente" package="Models" visibility="public" xPosition="20.0" yPosition="420.0">
+    <Class name="Cliente" package="Models" visibility="public" xPosition="183.0" yPosition="436.0">
       <Fields>
         <Field name="contadorId" type="int" visibility="private" isStatic="true"/>
         <Field name="idCliente" type="int" visibility="private"/>
@@ -216,7 +216,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Persona" package="Models" visibility="public" xPosition="388.0" yPosition="777.0">
+    <Class name="Persona" package="Models" visibility="public" xPosition="409.0" yPosition="777.0">
       <Fields>
         <Field name="nom" type="String" visibility="private"/>
         <Field name="ape" type="String" visibility="private"/>
@@ -253,7 +253,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Vehiculo" package="Models" visibility="public" xPosition="872.0" yPosition="538.0">
+    <Class name="Vehiculo" package="Models" visibility="public" xPosition="816.0" yPosition="666.0">
       <Fields>
         <Field name="modelo" type="String" visibility="private"/>
         <Field name="marca" type="String" visibility="private"/>
